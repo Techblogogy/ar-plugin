@@ -25,7 +25,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 
 /** CameraDeepArPlugin */
-public class CameraDeepArPlugin implements FlutterPlugin ,ActivityAware{
+public class CameraDeepArPlugin implements FlutterPlugin, ActivityAware{
 
   private PluginRegistry.Registrar mPluginRegistrar;
     private FlutterPluginBinding pluginBinding;

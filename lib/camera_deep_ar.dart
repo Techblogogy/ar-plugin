@@ -134,8 +134,8 @@ class _CameraDeepArState extends State<CameraDeepAr> {
   @override
   Widget build(BuildContext context) {
     final Map<String, Object> args = {
-      "androidLicenceKey": widget.androidLicenceKey ?? "",
-      "iosLicenceKey": widget.iosLicenceKey ?? "",
+      "androidLicenceKey": widget.androidLicenceKey,
+      "iosLicenceKey": widget.iosLicenceKey,
       "recordingMode": RecordingMode.values.indexOf(widget.recordingMode),
       "direction": CameraDirection.values.indexOf(widget.cameraDirection),
       "cameraMode": CameraMode.values.indexOf(widget.cameraMode)
@@ -160,9 +160,6 @@ class _CameraDeepArState extends State<CameraDeepAr> {
       id,
       this,
     );
-    if (widget.cameraDeepArCallback == null) {
-      return;
-    }
     widget.cameraDeepArCallback(controller);
     _controller = controller;
   }
@@ -192,7 +189,7 @@ class CameraDeepArController {
   CameraDeepArController._(
     this.channel,
     this._cameraDeepArState,
-  ) : assert(channel != null) {
+  ) {
     channel.setMethodCallHandler(_handleMethodCall);
   }
 
@@ -200,7 +197,6 @@ class CameraDeepArController {
     int id,
     _CameraDeepArState _cameraDeepArState,
   ) async {
-    assert(id != null);
     final MethodChannel channel =
         MethodChannel('plugins.flutter.io/deep_ar_camera/$id');
     String resp = await channel.invokeMethod('isCameraReady');
