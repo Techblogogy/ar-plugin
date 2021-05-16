@@ -289,6 +289,8 @@ public class CameraDeepArView implements PlatformView,
         masks.add("slash");
         masks.add("twistedface");
         masks.add("grumpycat");
+        masks.add("halo_example");
+        masks.add("halo_diy");
 
         effects = new ArrayList<>();
         effects.add("none");

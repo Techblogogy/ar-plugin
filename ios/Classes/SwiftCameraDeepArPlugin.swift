@@ -49,6 +49,8 @@ enum Masks: String, CaseIterable {
     case teddycigar
     case tripleface
     case twistedFace
+    case halo_example
+    case halo_diy
 }
 
 enum Effects: String, CaseIterable {

@@ -36,6 +36,8 @@ enum Masks {
   teddycigar,
   tripleface,
   twistedFace,
+  halo_example,
+  halo_diy
 }
 
 enum Effects {
